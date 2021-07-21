@@ -1,3 +1,10 @@
-* {
+*{
     text-align: center;
-  }
+  } 
+  
+  body {
+    background-image: url('https://cdn.discordapp.com/attachments/862414760922710040/867455957813559316/background-power-point-simple-keren-11.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
