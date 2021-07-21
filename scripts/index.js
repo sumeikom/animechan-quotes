@@ -28,4 +28,4 @@ reloadButton.addEventListener('click', getAnimeQuote)
 
 getAnimeQuote()
 
-likeButton.addEventListener('click', saveJoke)
+likeButton.addEventListener('click', saveQuote)
