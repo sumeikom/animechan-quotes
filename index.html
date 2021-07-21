@@ -7,14 +7,47 @@
     <script defer src="index.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
   </head>
+  <script>
+      let sortDirection = false
+      let spellData = [
+            { index: "acid-arrow",},
+			{ name: "Acid Arrow",},
+			{ url: "/api/spells/acid-arrow"},
+
+      ];
+
+      window.onload = () => {
+          
+      }
+
+      loadTable(spellData);
+
+      function loadTable (spellData)
+      const tableBody = document.getElementById('spellData');
+      let dataHtml = '';
+
+      for(let person of personData) {
+          dataHtml += '<tr><td>${spells.index} ${spells.name} ${spells.url}</td></tr>';
+      }
+      
+  </script>
   <body>
 
     <h1>Spellbook</h1>
 
-    <ul id="spell-information">
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        
+        <tbody> id="spellData"</tbody>
 
-    </ul>
-   
+
+</table>
 
   </body>
 </html>
