@@ -1,41 +1,31 @@
-const animeImg = document.querySelector("#meme-img");
-const reloadAnimeBttn = document.getElementById('button');
-const upvoteCount = document.getElementById('upvotes');
-const animeTitle = document.getElementById("meme-title");
-const saveAnimeBttn = document.getElementById("save-button")
+console.log('%cWelcome to Animechan!', 'color: pink')
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("HTML has Loaded!");
+const quotePTag = document.querySelector('#joke')
+const reloadButton = document.querySelector('#reload-joke-button')
+const likeButton = document.querySelector('#like-button')
+const likedQuotesContainer = document.querySelector('#liked-quotes')
 
-    reloadAnimeBttn.addEventListener('click', getAnimeQuote)
+let currentQuote = {}
+const likedQuotes = []
 
-    saveAnimeBttn.addEventListener('click', saveAnimeQuote)
+function saveJoke() {
+  if (!likedQuotes.includes(currentQuote)) {
+    likedQuotes.push(currentQuote)
+    const li = document.createElement('li')
+    li.innerText = currentJokeQuote.quote
+    likedQuotesContainer.append(li)
+    li.addEventListener('click', event => removeQuote(event))
+  } else {
+    alert('Opps! You already have that quote!')
+  }
+}
 
-    upvoteCount.addEventListener('mouseover', (e) => {
-        e.target.style.color = "pink"
-    });
-    
-    upvoteCount.addEventListener('mouseout', (e) => {
-        e.target.style.color = "black"
-    });
-});
+function removeQuote(event) {
+  event.target.remove()
+}
 
-function saveAnimeBttn(){
-    const ol = document.getElementById("saved-anime-quote")
-    const li = document.createElement("li")
-    const liButton = document.createElement("button")
-    const a = document.createElement("a")
+reloadButton.addEventListener('click', getAnimeQuote)
 
-    liButton.innerHTML = "x"
-    a.innerText = document.querySelector("#anime-title").innerText
-    a.href = document.querySelector("img").src
-    li.appendChild(a) 
-    a.target = "_blank"
-    ol.appendChild(li)
-    li.appendChild(liButton)
-    liButton.addEventListener("click", (e) => removeAnimeQuote(e)); 
-};
+getAnimeQuote()
 
-function removeAnimeQuote(e){
-    e.target.parentNode.remove()
-};
+likeButton.addEventListener('click', saveJoke)
