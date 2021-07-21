@@ -1,47 +1,20 @@
-
-// api url
-const api_url = 
-      "https://ghibliapi.herokuapp.com/films";
-  
-// Defining async function
-async function getapi(url) {
+const URL = `https://animechan.vercel.app/api/random}` 
+function getAnimeQuoteOnce() {
+    fetch(URL, { 
+        headers: {
+            "Accept" : "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(quote => console.log(quote))
     
-    // Storing response
-    const response = await fetch(url);
+    //.then(res => res.json()) 
+    //.then(data => {
+        // const title = data.title
+        // memeImg.src = data.url
+        // memeImg.style.filter = "invert(0%)"
+        // upvoteCount.innerHTML = `${data.ups} People have upvoted this meme 🔥 (hover me)`
+        // memeTitle.innerHTML = `Meme Title: ${title}` 
+        // invertImg();
     
-    // Storing data in form of JSON
-    let data = await response.json();
-    console.log(data);
-    if (response) {
-        hideloader();
-    }
-    show(data);
-}
-// Calling that async function
-getapi(api_url);
-  
-// Function to hide the loader
-function hideloader() {
-    document.getElementById('loading').style.display = 'none';
-}
-// Function to define innerHTML for HTML table
-function show(data) {
-    let tab = 
-        `<tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Director</th>
-         </tr>`;
-    
-    // Loop to access all rows 
-    for (let r of data.list) {
-        tab += `<tr> 
-    <td>${r.title} </td>
-    <td>${r.description}</td>
-    <td>${r.director}</td> 
-          
-</tr>`;
-    }
-    // Setting innerHTML as tab variable
-    document.getElementById("films").innerHTML = tab;
-}
+};

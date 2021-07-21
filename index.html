@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="utf-8">
     <head>
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" 
-              content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <meta charset="utf-8">
+        <title>Anime Quote Generator</title>
+        <script defer src="scripts/services.js" charset="utf-8"></script>
+        <script defer src="scripts/index.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!-- Here a loader is created which 
-             loads till response comes -->
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border" 
-                 role="status" id="loading">
-                <span class="sr-only">Loading...</span>
+        <div>
+            <h1 id="title">Get a random anime quote</h1>
+            <p id="upvotes"></p>
+            <div>
+                <ol id="saved-quotes" class="center"><strong>SAVED ANIME QUOTES</strong>
+                <br>
+                </ol>
             </div>
+            <ul id="memes-container">
+                <p id="meme-title"></p>
+                <img id="meme-img" class="center">
+            </ul>
+            <br>
+            <button id="button" class="center"><strong>Generate New Anime Quote</strong></button>
+            <br>
+            <button id="save-button" class="center"><strong>Save Anime Quote</strong></button>
         </div>
-        <h1>Studio Ghibli Films</h1>
-        <!-- table for showing data -->
-        <table id="films"></table>
     </body>
 </html>
