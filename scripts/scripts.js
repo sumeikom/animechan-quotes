@@ -1,7 +1,7 @@
 
 // api url
 const api_url = 
-      "https://www.dnd5eapi.co/api/spells";
+      "https://ghibliapi.herokuapp.com/films";
   
 // Defining async function
 async function getapi(url) {
@@ -10,7 +10,7 @@ async function getapi(url) {
     const response = await fetch(url);
     
     // Storing data in form of JSON
-    var data = await response.json();
+    let data = await response.json();
     console.log(data);
     if (response) {
         hideloader();
@@ -28,20 +28,20 @@ function hideloader() {
 function show(data) {
     let tab = 
         `<tr>
-          <th>Index</th>
-          <th>Name</th>
-          <th>Url</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Director</th>
          </tr>`;
     
     // Loop to access all rows 
     for (let r of data.list) {
         tab += `<tr> 
-    <td>${r.index} </td>
-    <td>${r.name}</td>
-    <td>${r.url}</td> 
+    <td>${r.title} </td>
+    <td>${r.description}</td>
+    <td>${r.director}</td> 
           
 </tr>`;
     }
     // Setting innerHTML as tab variable
-    document.getElementById("spells").innerHTML = tab;
+    document.getElementById("films").innerHTML = tab;
 }
