@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" dir="utf-8">
-    <head>
-        <meta charset="utf-8">
-        <title>Anime Quote Generator</title>
-        <script defer src="scripts/services.js" charset="utf-8"></script>
-        <script defer src="scripts/index.js" charset="utf-8"></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div>
-            <h1 id="title">Get a random anime quote</h1>
-            <p id="upvotes"></p>
-            <div>
-                <ol id="saved-quotes" class="center"><strong>SAVED ANIME QUOTES</strong>
-                <br>
-                </ol>
-            </div>
-            <ul id="memes-container">
-                <p id="meme-title"></p>
-                <img id="meme-img" class="center">
-            </ul>
-            <br>
-            <button id="button" class="center"><strong>Generate New Anime Quote</strong></button>
-            <br>
-            <button id="save-button" class="center"><strong>Save Anime Quote</strong></button>
-        </div>
-    </body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Anime Quotes</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/services.js" charset="utf-8"></script>
+    <script defer src="scripts/index.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <h1>Welcome Animechan!</h1>
+
+    <p id='quote'></p>
+
+    <button id="reload-quote-button">New Quote</button>
+    <button id="like-button">Like This Quote</button>
+
+    <h2>Liked Quotes</h2>
+
+    <p>Click a quote to remove it!</p>
+
+    <ul id="liked-quotes">
+    </ul>
+
+  </body>
 </html>
