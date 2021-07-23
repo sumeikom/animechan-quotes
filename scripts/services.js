@@ -11,6 +11,9 @@ function getAnimeQuote() {
     currentQuote = data
     const quote = data.quote
     quotePTag.innerText = quote
+
+    const anime = data.anime
+    animePTag.innerText = anime
   })
 }
 

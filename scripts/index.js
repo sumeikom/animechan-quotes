@@ -1,16 +1,29 @@
 console.log('%cWelcome to Animechan!', 'color: pink')
 
 const quotePTag = document.querySelector('#quote')
+const animePTag = document.querySelector('#anime')
 const reloadButton = document.querySelector('#reload-quote-button')
 const likeButton = document.querySelector('#like-button')
 const likedQuotesContainer = document.querySelector('#liked-quotes')
 
 let currentQuote = {}
-const likedQuotes = []
+let likedQuotes = []
 
 function saveQuote() {
   if (!likedQuotes.includes(currentQuote)) {
     likedQuotes.push(currentQuote)
+    
+
+    function removeQuote(event) {
+      event.target.remove()
+      const removeAnimeQuotes = likedQuotes.filter(likedQuote => {
+        return likedQuote !== currentQuote
+      }
+        )
+        likedQuotes = removeAnimeQuotes
+    } 
+
+
     const li = document.createElement('li')
     li.innerText = currentQuote.quote
     likedQuotesContainer.append(li)
@@ -20,9 +33,7 @@ function saveQuote() {
   }
 }
 
-function removeQuote(event) {
-  event.target.remove()
-}
+
 
 reloadButton.addEventListener('click', getAnimeQuote)
 
