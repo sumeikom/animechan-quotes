@@ -17,13 +17,3 @@ function getAnimeQuote() {
   })
 }
 
-function postAnimeQuote(body) {
-  return fetch(URL, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-  .then(res => res.json())
-}
